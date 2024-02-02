@@ -34,12 +34,7 @@ public @interface EndpointExtension
 	Method method() default Method.GET;
 	
 	/**
-	 * @return True if this endpoint should be secured
+	 * @return Endpoint will be secured by this SPeL expression. Empty expression means not secured.
 	 */
-	boolean authenticated() default false;
-	
-	/**
-	 * @return Security SPeL expression (in case authenticated is set to true)
-	 */
-	String expression() default "";
+	String authorize() default "";
 }
